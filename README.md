@@ -11,4 +11,6 @@
    ![image](https://github.com/user-attachments/assets/4ef3cbe5-2985-4b3a-9970-8f709570884e)
 7. When the download is done you can then either run the program by pressing run in the IDE whilst its stil connected, or you can run it by loading the slot on the brain on the robot
 
+LINK TO YOUTUBE VIDEO: [https://youtu.be/at17e5mnRXI](https://youtu.be/at17e5mnRXI)
+
 
