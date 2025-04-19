@@ -26,7 +26,9 @@ wait(100, MSEC)
 def load():
     Catapult.spin_for(FORWARD, 1250, DEGREES, wait=True)
 
+
 def detectBucket():
+    #Performs actions if bucket is detected
     if Distance_Sensor.is_object_detected():
         drivetrain.drive_for(FORWARD, Distance_Sensor.object_distance(MM), MM, wait=True)
         wait(0.5, SECONDS)
@@ -45,6 +47,7 @@ def detectBucket():
 
 
 def resetCatapult(Start_Position):
+    #Resets catapult to starting position accounting for existing rotations
     if (Catapult.position(DEGREES) % 1800) / 5 >= 240:
         brain.screen.print("1")
         Catapult.spin_for(FORWARD, 1800 - Catapult.position(DEGREES) % 1800, DEGREES, wait=True)
@@ -54,6 +57,7 @@ def resetCatapult(Start_Position):
         Catapult.spin_for(FORWARD, Start_Position - Catapult.position(DEGREES) % 1800, DEGREES, wait=True)
 
 def autoload():
+    #Performs the action to load the ball if object is detected
     if Distance_Sensor.is_object_detected():
         drivetrain.drive_for(FORWARD, Distance_Sensor.object_distance(MM), MM, wait=True)
         wait(0.5, SECONDS)
@@ -191,6 +195,7 @@ def rc_auto_loop_function_controller():
                 # the buttons are released
                 e_buttons_control_motors_stopped = True
 
+            #Assigning custom actions to buttons
             if controller.buttonA.pressing():
                 autoload()
             if controller.buttonB.pressing():
